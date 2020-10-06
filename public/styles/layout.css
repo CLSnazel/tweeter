@@ -18,6 +18,28 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav{
+  background-color:#4056A1;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  height: 120px; 
+  width:100%;
+  /* consider changing height later to em*/
+  align-items: flex-end;
+  padding: 1.5em;
+}
+
+nav span:first-child{
+  font-family: 'Bungee', sans-serif;
+}
+
+main{
+  width:90%;
+  margin: 0 5% 0% 5%;
 }
 
 /*

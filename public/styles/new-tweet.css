@@ -1,0 +1,30 @@
+form{
+  display:flex;
+  flex-direction: column;
+
+}
+form label{
+  font-weight: 700;
+}
+form textarea{
+  border: 0px;
+  background-color: inherit;
+  border-bottom: 5px solid #545149;
+  resize:none;
+  height:1rem;
+  padding: 0px;
+}
+
+form div{
+  font-family: 'Bungee', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin-top:1rem;
+}
+
+form div button{
+  background-color: #4056A1;
+  border: none;
+  padding: 0.25em;
+  color:white;
+}
