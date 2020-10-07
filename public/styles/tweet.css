@@ -7,6 +7,7 @@ article.tweet{
   flex-direction: column;
   border:5px solid #545149;
   padding: 0.5em;
+  margin-bottom: 2em;
 }
 
 /*TWEET CONTAINER HOVER*/
