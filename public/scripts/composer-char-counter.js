@@ -1,9 +1,10 @@
 const TWEETLENGTH = 140;
+
 $(document).ready(function() {
   console.log('body is ready');
-  $('.new-tweet form > textarea').on("keydown", function() {
-    console.log(this);
-    console.log($(this).val().length);
+  $('.new-tweet form > textarea').on("input", function() {
+    // console.log(this);
+    // console.log($(this).val().length);
     let currLength = $(this).val().length;
     let currRemain = TWEETLENGTH - currLength;
 
