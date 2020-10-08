@@ -38,6 +38,13 @@ nav{
 nav span:first-child{
   font-family: 'Bungee', sans-serif;
 }
+nav a{
+  margin:0;
+  text-decoration: none;
+}
+nav a:hover{
+  cursor: pointer;
+}
 
 main{
   width:90%;
