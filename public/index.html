@@ -21,6 +21,7 @@
     
 
     <!-- App JS -->
+    <script defer src="/scripts/composer-char-counter.js"></script>
     <script defer type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
@@ -42,9 +43,10 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form>
+        <form action="">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
+          <p class="error"></p>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -55,7 +57,7 @@
         
       </section>    
     </main>
-    <script src="/scripts/composer-char-counter.js"></script>
+   
     <!-- Icons from https://thenounproject.com:
       - Heart by BomSymbols from the Noun Project: https://thenounproject.com/icon/689240/
       - repost by Anhar Ismail from the Noun Project: https://thenounproject.com/icon/2908225/
