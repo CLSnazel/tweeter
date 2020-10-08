@@ -8,7 +8,7 @@ $(document).ready(function() {
     let currLength = $(this).val().length;
     let currRemain = TWEETLENGTH - currLength;
 
-    let divSibElem = $(this).siblings()[1];
+    let divSibElem = $($(this).siblings('div')[0]);
     let counterElem = $(divSibElem).children(".counter");
     console.log(divSibElem, counterElem);
     $(counterElem).html(currRemain);
