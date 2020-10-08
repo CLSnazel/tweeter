@@ -21,29 +21,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-nav{
-  background-color:#4056A1;
+.content {
   display: flex;
-  justify-content: space-between;
-  color: white;
-  height: 120px; 
-  width:100%;
-  position: sticky;
-  top:0px;
-  /* consider changing height later to em*/
-  align-items: flex-end;
-  padding: 1.5em;
-}
-
-nav span:first-child{
-  font-family: 'Bungee', sans-serif;
-}
-nav a{
-  margin:0;
-  text-decoration: none;
-}
-nav a:hover{
-  cursor: pointer;
+  flex-direction: column;
+  justify-content: stretch;
 }
 
 main{
@@ -61,3 +42,17 @@ main{
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+@media screen and (min-width:1040px){
+  .content {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5rem 5% 0 5%;
+    
+  }
+  main {
+    width:50%;
+    margin:0;
+  }
+}

@@ -3,7 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
@@ -12,6 +12,7 @@
     font-family: 'Source Sans Pro', sans-serif; -->
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
@@ -31,32 +32,34 @@
       <span class="logo">tweeter</span>
       <a><strong>Write</strong> a new tweet!</a>
     </nav>
-    <header>
-      <div>
-        <img src="/images/profile-hex.png"/>
-      </div>
-      <div>
-        <h2>Amazing Name</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <p class="error"></p>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>  
-      <section id="tweet-container">
-        
-      </section>    
-    </main>
+    <div class="content">
+      <header>
+        <div>
+          <img src="/images/profile-hex.png"/>
+        </div>
+        <div>
+          <h2>Amazing Name</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form action="">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <p class="error"></p>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>  
+        <section id="tweet-container">
+          
+        </section>    
+      </main>
+    </div>
    
     <!-- Icons from https://thenounproject.com:
       - Heart by BomSymbols from the Noun Project: https://thenounproject.com/icon/689240/

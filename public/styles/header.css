@@ -1,12 +1,39 @@
-body > header{
-  height:400px;
+.content > header{
+  height:448px;
   width:100%;
+  padding-top: 3rem;
   display:flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   background-color:#a7b2dc;
-  color:#FFF;
   background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+  color:#FFF;
 }
 
+.content{
+  height:100%;
+}
+
+@media screen and (min-width:1040px){
+  .content > header {
+    width:37vw;
+    height:37vw;
+    padding-top: 0;
+    /* border-radius: 20em; */
+    /* margin: 0 auto; */
+    border:5px solid #545149;
+  }
+
+}
+
+@media screen and (min-width:1600px){
+  .content > header {
+    width:25vw;
+    height:25vw;
+    max-width: 615px;
+    max-height: 615px;
+    border:5px solid #545149;
+  }
+
+}
