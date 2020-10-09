@@ -8,6 +8,7 @@ svg {
 svg:hover {
   fill:$hover-color;
   animation: svg-hover-in .5s ease 1;
+  cursor: pointer;
 }
 
 #back-to-top {

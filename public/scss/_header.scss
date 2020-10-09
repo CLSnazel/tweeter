@@ -1,0 +1,40 @@
+@import '_vars.scss';
+
+.content > header{
+  // flex settings
+  display:flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  //sizing settings
+  height:448px;
+  width:100%;
+  padding-top: 3rem;
+
+  //styling settings
+  background-color:$secondary-color;
+  color:white;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+}
+
+@media screen and (min-width:1040px){
+  .content > header {
+    width:37vw;
+    height:37vw;
+    padding-top: 0;
+    border:$border-style;
+  }
+
+}
+
+@media screen and (min-width:1600px){
+  .content > header {
+    width:25vw;
+    height:25vw;
+    max-width: 615px;
+    max-height: 615px;
+    border:$border-style;
+  }
+
+}
