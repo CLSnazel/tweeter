@@ -10,13 +10,13 @@ $(document).ready(function(){
     const $resList = $(`<ul>`);
   
     //init <li> sub-containers
-    const $reportItem = $(`<li>`)
-    $reportItem.attr('width','100');
+    const $reportItem = $(`<li>`);
     const $shareItem = $(`<li>`);
     const $likeItem = $(`<li>`);
   
-    //adding <svg> to <li> with jQuery svg library: http://keith-wood.name/svg.html
-    //this is because JQuery doesn't like add .attr('viewBox', "0 0 100 100"),
+    //adding <svg> to <li> with jQuery svg library by Keith Wood: 
+    //      http://keith-wood.name/svg.html     //
+    //this is because JQuery doesn't like adding .attr('viewBox', "0 0 100 100"),
     //it will set 'viewBox' as 'viewbox' making the svg useless
     $reportItem.svg({loadURL:'/images/icons/noun_Flag_2207078.svg'});
     $shareItem.svg({loadURL:'/images/icons/noun_repost_2908225.svg'});
