@@ -157,6 +157,7 @@ $(document).ready(function() {
       $.post('/tweets', newTweet)
         .then(() => {
           $(this).find('textarea').val('');
+          $($(this).find('.counter')[0]).html('140');
           loadTweets();
         });
     }
