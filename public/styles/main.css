@@ -1,0 +1,61 @@
+svg, #back-to-top {
+  fill: #4056A1;
+  animation: hover-fade-out 0.5s ease 1;
+}
+
+svg:hover, #back-to-top:hover {
+  fill: #ffa600;
+  animation: hover-fade-in 0.5s ease 1;
+}
+
+#back-to-top {
+  width: 7rem;
+  position: fixed;
+  bottom: 0;
+  right: 4%;
+}
+
+@keyframes hover-fade-in {
+  0% {
+    fill: #4056A1;
+  }
+  100% {
+    fill: #ffa600;
+  }
+}
+@keyframes hover-fade-out {
+  0% {
+    fill: #ffa600;
+  }
+  100% {
+    fill: #4056A1;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: fixed;
+  height: 5rem;
+  width: 100%;
+  top: 0px;
+  padding: 0 5% 1rem 5%;
+  color: white;
+}
+nav span.logo {
+  font-family: "Bungee", sans-serif;
+  font-size: 2rem;
+}
+nav a {
+  margin: 0;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1040px) {
+  nav {
+    background-color: #4056A1;
+    position: sticky;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

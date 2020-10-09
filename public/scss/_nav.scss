@@ -1,0 +1,36 @@
+@import '_vars.scss';
+
+nav {
+  // flex settings
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  //size & position settings
+  position: fixed;
+  height: 5rem; 
+  width:100%;
+  top:0px;
+  padding: 0 5% 1rem 5%;
+
+  //font color
+  color: white;
+
+  span.logo{
+    font-family:$display-font;
+    font-size: 2rem;
+  }
+
+  a{
+    margin:0;
+    text-decoration: none;
+  }
+  
+}
+
+@media screen and (min-width:1040px) {
+  nav {
+    background-color:#4056A1;
+    position: sticky;
+  }
+}

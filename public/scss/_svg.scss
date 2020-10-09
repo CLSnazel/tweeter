@@ -1,0 +1,37 @@
+@import '_vars.scss';
+
+svg {
+  fill:$primary-color;
+  animation:svg-hover-out .5s ease 1;
+}
+
+svg:hover {
+  fill:$hover-color;
+  animation: svg-hover-in .5s ease 1;
+}
+
+#back-to-top {
+  @extend svg;
+  width: 7rem;
+  position: fixed;
+  bottom: 0;
+  right: 4%;
+}
+
+@keyframes svg-hover-in {
+  0% {
+    fill:$primary-color;
+  }
+  100% {
+    fill:$hover-color;
+  }
+}
+
+@keyframes svg-hover-out {
+  0% {
+    fill:$hover-color;
+  }
+  100% {
+    fill:$primary-color;
+  }
+}
