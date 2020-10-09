@@ -1,11 +1,11 @@
 /*All POST, GET, and rendering-related functionality here */
 
-$(document).ready(function(){
+$(document).ready(function() {
   $($('.error')[0]).slideUp();
   $('#back-to-top').slideUp();
 
   //returns a <ul> of svg buttons to "respond" or interact with a singular tweet
-  const renderTweetResponse = function(){
+  const renderTweetResponse = function() {
     //init response <ul> container
     const $resList = $(`<ul>`);
   
@@ -14,7 +14,7 @@ $(document).ready(function(){
     const $shareItem = $(`<li>`);
     const $likeItem = $(`<li>`);
   
-    //adding <svg> to <li> with jQuery svg library by Keith Wood: 
+    //adding <svg> to <li> with jQuery svg library by Keith Wood:
     //      http://keith-wood.name/svg.html     //
     //this is because JQuery doesn't like adding .attr('viewBox', "0 0 100 100"),
     //it will set 'viewBox' as 'viewbox' making the svg useless
@@ -28,7 +28,7 @@ $(document).ready(function(){
     return $resList;
   };
   
-  //given a time in epoch format, return a human-readable string 
+  //given a time in epoch format, return a human-readable string
   //of (roughly) how many hours/days/months/years a tweet was posted
   const timePastSince = function(timeVal) {
     //get current time
@@ -46,14 +46,14 @@ $(document).ready(function(){
       day: 86400,
       hour: 3600,
       minute: 60,
-    }
+    };
   
-    //loop through each time unit to find best match 
-    for (let time in timeUnits){
+    //loop through each time unit to find best match
+    for (let time in timeUnits) {
       //round down value
       let timeToUnit = Math.floor((elapsedTime / timeUnits[time]) / 1000);
   
-      if(timeToUnit >= 1) {
+      if (timeToUnit >= 1) {
         //set up string to include time unit
         elapsedString = `${timeToUnit} ${time}${timeToUnit > 1 ? 's' : ''} ago`;
         break;
@@ -61,7 +61,7 @@ $(document).ready(function(){
     }
   
     return elapsedString;
-  }
+  };
   
   
   //creates one new <article> element with tweet data
@@ -75,7 +75,7 @@ $(document).ready(function(){
     const $tweetName = $(`<p>`).text(tweet.user.name);
     const $tweetHandle = $(`<p>`).addClass('handle').text(tweet.user.handle);
   
-    //init tweet content 
+    //init tweet content
     const $tweetContent = $(`<p>`).text(tweet.content.text);
   
     //init tweet footer
@@ -113,17 +113,15 @@ $(document).ready(function(){
   //makes GET request to server and renders tweets
   const loadTweets = function() {
     $.get('/tweets')
-    .then((response) => {
-      let orderedTweets = response.sort((a, b) => b.created_at - a.created_at);
-      renderTweets(orderedTweets);
-
-      }
-    );
+      .then((response) => {
+        let orderedTweets = response.sort((a, b) => b.created_at - a.created_at);
+        renderTweets(orderedTweets);
+      });
   };
   loadTweets();
 
   
-  //given a message and a element to add find .error class within, 
+  //given a message and a element to add find .error class within,
   //triggers .error element to slide down with given message
   const renderErrorMsg = function(msg, targetElem) {
     const $msgElem = $($(targetElem).find('.error')[0]);
@@ -134,7 +132,7 @@ $(document).ready(function(){
   };
 
   //================FORM POST SUBMIT ==================//
-  const $tweetForm = $($('section.new-tweet form')[0]);  
+  const $tweetForm = $($('section.new-tweet form')[0]);
   $tweetForm.on('submit', function(event) {
     
     event.preventDefault();
@@ -157,11 +155,10 @@ $(document).ready(function(){
     } else {
       //all good, post tweet and reset form
       $.post('/tweets', newTweet)
-      .then((response) => {
-
-        $(this).find('textarea').val('');
-        loadTweets();
-      });
+        .then(() => {
+          $(this).find('textarea').val('');
+          loadTweets();
+        });
     }
 
   });
