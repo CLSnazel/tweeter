@@ -1,0 +1,79 @@
+@import '_vars.scss';
+
+form {
+  //flex settings
+  display:flex;
+  flex-direction: column;
+
+  //sizing settings
+  margin-bottom: 2em;
+
+  label{
+    font-weight: 700;
+  }
+
+  textarea{
+    border: 0px;
+    background-color: inherit;
+    border-bottom: $border-style;
+    resize:none;
+    max-height:auto;
+    padding: 0px;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  div{
+    display: flex;
+    justify-content: space-between;
+    margin-top:1rem;
+    font-family: $display-font;
+
+  }
+  button{
+    border: none;
+    padding: 0.25em;
+
+    color:white;
+    background-color: $primary-color;
+    animation: button-hover-out .5s ease 1;
+  }
+
+  button:hover{
+    background-color:$hover-color;
+    animation: button-hover-in .5s ease 1;
+  }
+}
+
+//error states in form
+.invalid-length{
+  color:$error-color;
+}
+
+.error{
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  color:$error-color;
+}
+
+//animations for submit button
+@keyframes button-hover-in {
+  0% {
+    background-color:$primary-color;
+  }
+  100% {
+    background-color:$hover-color;
+  }
+}
+
+@keyframes button-hover-out {
+  0% {
+    background-color:$hover-color;
+  }
+  100% {
+    background-color:$primary-color;
+  }
+}

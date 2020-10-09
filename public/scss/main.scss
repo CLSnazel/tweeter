@@ -1,4 +1,53 @@
+@import '_vars.scss';
 @import '_svg.scss';
 @import '_nav.scss';
 @import '_header.scss';
 @import '_tweet.scss';
+@import '_new-tweet.scss';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+//Global Layout
+
+body {
+  color: $border-color;
+  background-color: $background-color;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+main{
+  width:90%;
+  margin: 0 5% 0% 5%;
+}
+
+p{
+  word-wrap: break-word;
+}
+
+//Media queries for layout
+
+@media screen and (min-width:1040px){
+  .content {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5rem 5% 0 5%;
+    
+  }
+  main {
+    width:50%;
+    margin:0;
+  }
+}

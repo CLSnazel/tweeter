@@ -2,6 +2,7 @@ $primary-color:#4056A1;
 $secondary-color:#a7b2dc;
 $hover-color:#ffa600;
 $background-color:#f4f1ec;
+$error-color:crimson;
 $border-color:#545149;
 $border-style: 5px solid $border-color;
 $display-font:'Bungee', sans-serif;
@@ -16,4 +17,10 @@ $body-font: 'Source Sans Pro', sans-serif;
   -webkit-box-shadow: 10px 10px 0px 0px $secondary-color;
   -moz-box-shadow: 10px 10px 0px 0px $secondary-color;
   box-shadow: 10px 10px 0px 0px $secondary-color;
+}
+
+@mixin animate-ease($animation) {
+  -webkit-animation: $animation .5s ease 1;
+  -moz-animation: $animation .5s ease 1;
+  animation: $animation .5s ease 1;
 }
