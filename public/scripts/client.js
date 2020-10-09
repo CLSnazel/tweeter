@@ -6,6 +6,7 @@
 
 $(document).ready(function(){
   $($('.error')[0]).slideUp();
+  $('#back-to-top').slideUp();
   const renderTweetResponse = function(){
     //init response <ul> container
     const $resList = $(`<ul>`);
@@ -183,6 +184,25 @@ $(document).ready(function(){
       }, 
       700
     );
+  });
+
+  //=============SCROLL - TO - TOP ==========================//
+  $('#back-to-top').click(function() {
+    $('body, html').animate(
+      {
+        scrollTop: $('body').offset().top
+      },
+      700
+    );
+  });
+
+  $(document).scroll(function() {
+    console.log('scrolling!', $('html, body').scrollTop(), $('.new-tweet').offset().top);
+    if ($('html, body').scrollTop() < $('.new-tweet').offset().top) {
+      $('#back-to-top').slideUp();
+    } else {
+      $('#back-to-top').slideDown();
+    }
   });
 
 });

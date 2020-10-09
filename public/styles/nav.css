@@ -25,6 +25,18 @@ nav a:hover{
   cursor: pointer;
 }
 
+#back-to-top{
+  width: 7rem;
+  position: fixed;
+  bottom: 0;
+  right: 4%;
+  fill:#4056A1;
+}
+
+#back-to-top:hover{
+  fill:#ffa600;
+}
+
 @media screen and (min-width:1040px){
   nav {
     background-color:#4056A1;
