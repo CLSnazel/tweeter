@@ -4,22 +4,18 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-    <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="/styles/nav.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="/styles/header.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="/styles/tweet.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/scripts/jquery.svg.js"></script>
     
-
     <!-- App JS -->
     <script defer src="/scripts/composer-char-counter.js"></script>
     <script defer type="text/javascript" src="/scripts/client.js"></script>
@@ -31,17 +27,21 @@
       <span class="logo">tweeter</span>
       <a><strong>Write</strong> a new tweet!</a>
     </nav>
+    <!-- content wrapper -->
     <div class="content">
       <header>
         <div>
           <img src="/images/profile-hex.png"/>
         </div>
-        <div>
-          <h2>Amazing Name</h2>
-        </div>
+        
+        <h2>Amazing Name</h2>
+        
       </header>
+
       <!-- Page-specific (main) content here -->
       <main class="container">
+
+        <!-- Tweet Form -->
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <form action="">
@@ -53,23 +53,25 @@
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
-        </section>  
+        </section>
+        
+        <!-- Tweets Loaded Here -->
         <section id="tweet-container">
           
         </section>    
       </main>
     </div>
     
+    <!-- scroll-to-top button -->
     <svg id="back-to-top" viewBox="0 0 100 100">
       <use width=100 height=100 href="/images/noun_up_98968.svg#icon" />
     </svg>
-    
-   
-    <!-- Icons from https://thenounproject.com:
-      - Heart by BomSymbols from the Noun Project: https://thenounproject.com/icon/689240/
-      - repost by Anhar Ismail from the Noun Project: https://thenounproject.com/icon/2908225/
-      - Flag by Nubaia Karim Barsha from the Noun Project: https://thenounproject.com/icon/2207078/
-      - up by Arthur Shlain from the Noun Project: https://thenounproject.com/icon/98968/
-    -->
+      
   </body>
+  <!--References: Icons from https://thenounproject.com:
+    - Heart by BomSymbols from the Noun Project: https://thenounproject.com/icon/689240/
+    - repost by Anhar Ismail from the Noun Project: https://thenounproject.com/icon/2908225/
+    - Flag by Nubaia Karim Barsha from the Noun Project: https://thenounproject.com/icon/2207078/
+    - up by Arthur Shlain from the Noun Project: https://thenounproject.com/icon/98968/
+  -->
 </html>

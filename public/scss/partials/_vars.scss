@@ -7,20 +7,3 @@ $border-color:#545149;
 $border-style: 5px solid $border-color;
 $display-font:'Bungee', sans-serif;
 $body-font: 'Source Sans Pro', sans-serif;
-
-%font-on-primary {
-  color:white;
-  background-color: $primary-color;
-}
-
-%box-shadow {
-  -webkit-box-shadow: 10px 10px 0px 0px $secondary-color;
-  -moz-box-shadow: 10px 10px 0px 0px $secondary-color;
-  box-shadow: 10px 10px 0px 0px $secondary-color;
-}
-
-@mixin animate-ease($animation) {
-  -webkit-animation: $animation .5s ease 1;
-  -moz-animation: $animation .5s ease 1;
-  animation: $animation .5s ease 1;
-}
