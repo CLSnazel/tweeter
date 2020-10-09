@@ -7,6 +7,8 @@
 $(document).ready(function(){
   $($('.error')[0]).slideUp();
   $('#back-to-top').slideUp();
+
+  //returns a <ul> of svg buttons to "respond" or interact with a singular tweet
   const renderTweetResponse = function(){
     //init response <ul> container
     const $resList = $(`<ul>`);
@@ -18,6 +20,8 @@ $(document).ready(function(){
     const $likeItem = $(`<li>`);
   
     //adding <svg> to <li> with jQuery svg library: http://keith-wood.name/svg.html
+    //this is because JQuery doesn't like add .attr('viewBox', "0 0 100 100"),
+    //it will set 'viewBox' as 'viewbox' making the svg useless
     $reportItem.svg({loadURL:'/images/noun_Flag_2207078.svg'});
     $shareItem.svg({loadURL:'/images/noun_repost_2908225.svg'});
     $likeItem.svg({loadURL:"/images/noun_Heart_689240.svg#icon"});
@@ -25,7 +29,6 @@ $(document).ready(function(){
     //nesting <li> in <ul>
     $resList.append($reportItem).append($shareItem).append($likeItem);
     
-  
     return $resList;
   };
   
@@ -64,7 +67,7 @@ $(document).ready(function(){
   }
   
   
-  //creates new <article> element with tweet data
+  //creates one new <article> element with tweet data
   const createTweetElement = function(tweet) {
     //initialize all nodes
     const $tweetArticle = $(`<article>`).addClass("tweet");
@@ -96,44 +99,39 @@ $(document).ready(function(){
   
   };
   
+  //given a set of tweet objects, clear tweet section and refill with new tweets
   const renderTweets = function(tweets) {
     
     let $tweetSection = $('#tweet-container');
     $tweetSection.empty();
 
     for (let tweet of tweets) {
-      // console.log(tweet);
       let $tweetElem = createTweetElement(tweet);
-      // console.log($tweetElem);
+
       $tweetSection.append($tweetElem);
+
     }
   };
 
+  //makes GET request to server and renders tweets
   const loadTweets = function() {
     $.get('/tweets')
     .then((response) => {
-      console.log(response);
       let orderedTweets = response.sort((a, b) => b.created_at - a.created_at);
-
       renderTweets(orderedTweets);
+
       }
     );
   };
   loadTweets();
 
   
-  //given a message and a element to add msgElem after, 
-  //adds error message as <p> tag
+  //given a message and a element to add find .error class within, 
+  //triggers .error element to slide down with given message
   const renderErrorMsg = function(msg, targetElem) {
-    // const $msgElem = $('<p>').addClass('error').text(msg);
-    // $msgElem.slideDown();
-    // $(targetElem).after($msgElem).slideDown();
-    // console.log("msg added.");
     const $msgElem = $($(targetElem).find('.error')[0]);
-    // $msgElem.attr('display', 'block');
     $msgElem.text(msg);
     $msgElem.slideDown();
-    // $msgElem.removeAttr('hidden');
 
     return;
   };
@@ -144,35 +142,30 @@ $(document).ready(function(){
     
     event.preventDefault();
    
-    //remove previous error messages, if any
-    // let previousErrors = $(this).find('.error')
-    // console.log(previousErrors);
-    // if(previousErrors.length > 0) {
-    //   for (err of previousErrors) {
-    //     $(err).remove();
-    //   }
-    // }
+    //reset error message
     let $errorElem = $($(this).find('.error')[0]);
     $errorElem.slideUp();
     $errorElem.empty();
-    // errorElem.attr('display', 'none');
 
     let newTweet = $(this).serialize();
 
     //check if tweet is empty
     if (newTweet.length < 6) {
-      // console.log('No tweet');
       renderErrorMsg("Oops! Your tweet is empty. Please enter a message first.", $(this));
+
     } else if (newTweet.length > TWEETLENGTH + 5) {
-      // console.log('too long!');
+      //check if too long
       renderErrorMsg("Oh no! Your tweet is too long! Shorten your tweet and try again", $(this));
+
     } else {
+      //all good, post tweet and reset form
       $.post('/tweets', newTweet)
       .then((response) => {
-        console.log(response);
+
         $(this).find('textarea').val('');
         loadTweets();
       });
+
     }
   });
 
@@ -197,8 +190,8 @@ $(document).ready(function(){
   });
 
   $(document).scroll(function() {
-    console.log('scrolling!', $('html, body').scrollTop(), $('.new-tweet').offset().top);
-    if ($('html, body').scrollTop() < $('.new-tweet').offset().top) {
+    
+    if ($('html, body').scrollTop() < 100) {
       $('#back-to-top').slideUp();
     } else {
       $('#back-to-top').slideDown();

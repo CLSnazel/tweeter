@@ -1,21 +1,26 @@
 const TWEETLENGTH = 140;
 
 $(document).ready(function() {
-  console.log('body is ready');
+
+  //changing .counter on tweet form input
   $('.new-tweet form > textarea').on("input", function() {
-    // console.log(this);
-    // console.log($(this).val().length);
+    
     let currLength = $(this).val().length;
     let currRemain = TWEETLENGTH - currLength;
 
+    //finding .counter element
     let divSibElem = $($(this).siblings('div')[0]);
     let counterElem = $(divSibElem).children(".counter");
-    console.log(divSibElem, counterElem);
+
+    //setting value of the counter
     $(counterElem).html(currRemain);
+
+    //adding class to counter if it is over it's limit
     if (currRemain < 0) {
       $(counterElem).addClass('invalid-length');
     } else {
       $(counterElem).removeClass('invalid-length');
     }
+
   });
 });
