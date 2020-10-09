@@ -1,9 +1,9 @@
-@import '_vars.scss';
-@import '_svg.scss';
-@import '_nav.scss';
-@import '_header.scss';
-@import '_tweet.scss';
-@import '_new-tweet.scss';
+@import './partials/_vars.scss';
+@import './partials/_svg.scss';
+@import './partials/_nav.scss';
+@import './partials/_header.scss';
+@import './partials/_tweet.scss';
+@import './partials/_new-tweet.scss';
 
 html {
   box-sizing: border-box;
